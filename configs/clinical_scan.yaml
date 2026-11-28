@@ -1,0 +1,6 @@
+extends: clinical.yaml
+
+experiment:
+  analysis: scan
+  output: ../runs/clinical_scan
+  split_file: ../data/protocol/clinical_scan_splits.csv

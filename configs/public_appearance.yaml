@@ -1,0 +1,6 @@
+extends: public.yaml
+
+experiment:
+  analysis: appearance
+  output: ../runs/public_appearance
+  split_file: ../protocol/public_splits.csv

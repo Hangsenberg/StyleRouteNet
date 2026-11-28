@@ -1,0 +1,82 @@
+{
+  "origin": "Retained held-out assignments supplied by the user in the OOF CSVs",
+  "seeds": [
+    73421,
+    18013,
+    92051,
+    46807,
+    31573
+  ],
+  "reference_seed": 73421,
+  "scores_used_to_choose_or_order_folds": false,
+  "validation_rule": "test_fold modulo five plus one; other three folds train, per manuscript",
+  "inputs": {
+    "Supplementary_Data_S2_five_seed_OOF.csv": "c410665e52b90ebef861f7b1fc503f8aa1a3d826f3138becd4710c2456e13db0",
+    "Supplementary_Data_S3_public_filename_aliases.csv": "f4b372dfffb81a9a2e9392e17be1d4f61d0dd3889b410e9b75f5ae38416f503d",
+    "Supplementary_Data_S1_reference_OOF.csv": "ad0b8c1093e3dd795414fce773b16439fbc8ca86c899ce07286b3d7772366862"
+  },
+  "public_archive_sha256": "5023ec9474cf13ea6649783eea52b9fd0c1233f238505b4d94ddc097e0269a10",
+  "outputs_sha256": {
+    "public_filename_aliases.csv": "56bb89d44458cab6edd515908387c3bbc051290ceb4866158fd898d56ee58368",
+    "public_splits.csv": "8896b0e47624487ad7806a9c5bd5624ff4d7a6d0b9feda2bde940dd60d9fd907",
+    "public_manifest.csv": "8c4d63a1bbb3e02b4492f7c1d464407e8f55a145f3c83a78dea2e01abe6333e6",
+    "clinical_splits.csv": "64d172ba325015ada8628f2304e389edad09fb8c1d249ff3636ea6ceefef4f3a",
+    "clinical_manifest_template.csv": "0df997f30d69bc049d017d8d092a0a564bee615c117f1731c917aa74307e29a2"
+  },
+  "clinical_image_paths": "Not supplied in prediction records; bind to actual images before training",
+  "patient_reference_labels": "Not inferred from field labels; patient-level evaluation remains disabled",
+  "cohorts": {
+    "public": {
+      "images": 204,
+      "groups": 0,
+      "reference_fold_supports": {
+        "1": {
+          "0": 20,
+          "1": 20
+        },
+        "2": {
+          "0": 20,
+          "1": 21
+        },
+        "3": {
+          "0": 20,
+          "1": 20
+        },
+        "4": {
+          "0": 21,
+          "1": 21
+        },
+        "5": {
+          "0": 20,
+          "1": 21
+        }
+      }
+    },
+    "clinical": {
+      "images": 576,
+      "groups": 192,
+      "reference_fold_supports": {
+        "1": {
+          "0": 65,
+          "1": 51
+        },
+        "2": {
+          "0": 65,
+          "1": 51
+        },
+        "3": {
+          "0": 64,
+          "1": 50
+        },
+        "4": {
+          "0": 64,
+          "1": 50
+        },
+        "5": {
+          "0": 65,
+          "1": 51
+        }
+      }
+    }
+  }
+}

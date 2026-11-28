@@ -1,0 +1,76 @@
+experiment:
+  name: public
+  output: ../runs/public
+  seeds: [73421, 18013, 92051, 46807, 31573]
+  reference_seed: 73421
+  folds: 5
+  analysis: main
+  split_mode: replay
+  split_file: ../protocol/public_splits.csv
+  bootstrap_samples: 10000
+  bootstrap_seed: 2026
+
+data:
+  name: public
+  kind: public
+  source: ../../build/r2-round2/public-dataset/Dataset.zip
+  archive_sha256: 5023ec9474cf13ea6649783eea52b9fd0c1233f238505b4d94ddc097e0269a10
+  release_commit: 54291b3865967bf4cf6ac8821dec2bf41319097f
+  manifest: ../protocol/public_manifest.csv
+  group_by_patient: false
+  image_size: 224
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+  crop_scale: [0.8, 1.0]
+  crop_ratio: [0.75, 1.3333333333333333]
+  horizontal_flip: 0.5
+  vertical_flip: 0.5
+  rotation: 15.0
+  brightness: 0.2
+  contrast: 0.2
+  saturation: 0.2
+  hue: 0.05
+  autocontrast: 0.5
+  interpolation: bilinear
+  stain: none
+  stain_strength: 0.10
+  permutation_stage: train
+  mask_seed: 1729
+
+model:
+  backbone: convnextv2_tiny.fcmae_ft_in1k
+  pretrained: true
+  pretrained_path: null
+  rank: 64
+  layer_norm_eps: 0.00001
+  style_eps: 0.000001
+  decay_eps: 0.0001
+  temperature_min: 0.7
+  temperature_max: 2.5
+  constant_gate: 1.0
+  attention_heads: 8
+  drop_path_rate: 0.0
+
+training:
+  epochs: 200
+  batch_size: 32
+  num_workers: 4
+  learning_rate: 0.0001
+  weight_decay: 0.05
+  minimum_learning_rate: 0.0
+  label_smoothing: 0.05
+  consistency_weight: 0.35
+  temperature_weight: 0.01
+  prior_strength: 0.0
+  selection_metric: auroc
+  selection_mode: max
+  threshold_rule: fixed
+  minimum_sensitivity: 0.9
+  amp: false
+  gradient_clip: null
+  deterministic: true
+  save_last: true
+  device: auto
+
+evaluation:
+  patient_aggregation: null

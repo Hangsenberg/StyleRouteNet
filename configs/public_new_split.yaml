@@ -1,0 +1,7 @@
+extends: public.yaml
+
+experiment:
+  analysis: new_experiment
+  split_mode: generate
+  output: ../runs/public_new_split
+  split_file: ../runs/splits/public_new_split.csv

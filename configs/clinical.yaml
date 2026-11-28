@@ -1,0 +1,15 @@
+extends: public.yaml
+
+experiment:
+  name: clinical
+  output: ../runs/clinical
+  split_file: ../protocol/clinical_splits.csv
+
+data:
+  name: clinical
+  kind: clinical
+  source: ../data/clinical
+  archive_sha256: null
+  release_commit: null
+  manifest: ../data/clinical.csv
+  group_by_patient: true
